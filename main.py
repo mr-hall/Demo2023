@@ -24,6 +24,8 @@ class Main():
             self.currentScreen.update()
             self.currentScreen.draw(screen)
             pygame.display.flip()
+            if self.currentScreen.next_state:
+                self.currentScreen = self.currentScreen.next_state()
         pygame.quit()
 
 
