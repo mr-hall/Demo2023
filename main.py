@@ -7,6 +7,7 @@ class Main():
         self.HEIGHT = 400
         self.currentScreen = states.Menu()
 
+
     def gameloop(self):
         pygame.init()
         size = [self.WIDTH, self.HEIGHT]
@@ -20,11 +21,12 @@ class Main():
                 if event.type == pygame.QUIT:  # If user clicked close
                     done = True  # Flag that we are done so we exit this loop
                 self.currentScreen.handle_input(event)
-
             self.currentScreen.update()
             self.currentScreen.draw(screen)
             pygame.display.flip()
         pygame.quit()
+
+
 
 main = Main()
 main.gameloop()
